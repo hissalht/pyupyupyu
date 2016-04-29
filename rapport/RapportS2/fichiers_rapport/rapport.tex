@@ -24,11 +24,11 @@ comme Touhou Project en 1996 ou encore DoDonpachi en 1998, des monuments de ce
 type de jeu.
 
 Celui-ci se différencie des Shoot-em up classiques par certaines
-caractéristiques. Tout d'abord, la taille du ``vaisseau'' du joueur se limite dans
-la plupart des Manic Shooter à un pixel, pourquoi ? Tout simplement pour pouvoir
-faire face à la deuxième caractèristique phare du Manic Shooter, la multitude de
-projectiles qui apparaissent à l'écran comme vous pouvez le voir sur cette image
-tirée de Touhou Project
+caractéristiques. Tout d'abord, la taille du ``vaisseau'' du joueur se limite
+dans la plupart des Manic Shooter à un pixel, pourquoi ? Tout simplement pour
+pouvoir faire face à la deuxième caractèristique phare du Manic Shooter, la
+multitude de projectiles qui apparaissent à l'écran comme vous pouvez le voir
+sur cette image tirée de Touhou Project
 
 \begin{center}
 \includegraphics[scale=0.75]{images/touhou_project.jpg}
@@ -64,31 +64,42 @@ Nous allons désormais aborder le fonctionnement du jeu et ses mécaniques.
 
 \subsection{Les menu}
 
-Ce que nous voyons en premier en jouant, ce sont les menus. En effet, dès que le jeu se lance, voici ce à quoi le joueur est confronté:
+Ce que nous voyons en premier en jouant, ce sont les menus. En effet, dès que le
+jeu se lance, voici ce à quoi le joueur est confronté:
 
 \begin{center}
 \includegraphics[scale=0.5]{images/menuprinc.jpg}
 \end{center}
 
-C'est là que le joueur commence à avoir la main. Il peut bouger le vaisseau via les flèches directionnelles pour se déplacer et tirer sur les astéroïdes afin de choisir ce qu'il veut faire. Chaque astéroïde est en fait un ennemi invincible qui, lorsqu'il se fait toucher, renvoie à une action bien spécifique.
+C'est là que le joueur commence à avoir la main. Il peut bouger le vaisseau via
+les flèches directionnelles pour se déplacer et tirer sur les astéroïdes afin de
+choisir ce qu'il veut faire. Chaque astéroïde est en fait un ennemi invincible
+qui, lorsqu'il se fait toucher, renvoie à une action bien spécifique.
 
-Nous allons maintenant voir ce que fait chacun de ces gros rochers. 
+Nous allons maintenant voir ce que fait chacun de ces gros rochers.
 
 \subsection{Play}
 
-Lorsque le joueur tire sur cette option, un autre menu s'offre à lui avec la possibilité de choisir entre les trois options que vous pouvez voir ici:
+Lorsque le joueur tire sur cette option, un autre menu s'offre à lui avec la
+possibilité de choisir entre les trois options que vous pouvez voir ici:
 
 \begin{center}
 \includegraphics[scale=0.5]{images/sousmenu.jpg}
 \end{center}
 
-Les deux premiers sont des modes de jeu et le dernier permet au joueur de revenir au menu principal. Maintenant, voyons ce que propose chaque mode de jeu.
+Les deux premiers sont des modes de jeu et le dernier permet au joueur de
+revenir au menu principal. Maintenant, voyons ce que propose chaque mode de jeu.
 
 \subsubsection{Mode histoire}
 
-Le mode histoire est un mode très simple qui va simplement amener le joueur à traverser trois niveaux différents avec un boss à la fin de chaque niveau. Les stages ont été conçus à l'avance et permet de découvrir tous les types d'ennemis implémentés dans le jeu.
+Le mode histoire est un mode très simple qui va simplement amener le joueur à traverser
+trois niveaux différents avec un boss à la fin de chaque niveau. Les stages ont
+été conçus à l'avance et permet de découvrir tous les types d'ennemis
+implémentés dans le jeu.
 
-Les stages se décomposent en blocks qui sont mis bout à bout de manière logique et réfléchi dans ce mode, ce qui n'est pas le cas pour le mode infini, que nous vous allons vous expliquer plus en détail tout comme ces fameux blocks. 
+Les stages se décomposent en blocks qui sont mis bout à bout de manière logique
+et réfléchi dans ce mode, ce qui n'est pas le cas pour le mode infini, que nous
+vous allons vous expliquer plus en détail tout comme ces fameux blocks.
 
 \subsubsection{Le mode infini et le générateur de niveaux}
 
@@ -166,21 +177,32 @@ maximum de 4.
 
 \subsection{Hi-Score}
 
-La partie consacré à Play étant terminé, à quoi sert l'astéroïde suivant. Lorsque le joueur tire dessus, celui-ci accède à un écran des scores semblable à celui-ci:
+La partie consacré à Play étant terminé, à quoi sert l'astéroïde suivant.
+Lorsque le joueur tire dessus, celui-ci accède à un écran des scores semblable à
+celui-ci:
 
 \begin{center}
 \includegraphics[scale=0.5]{images/hiscore.jpg}
 \end{center}
 
-Le joueur peut alors observer les meilleurs scores atteints par les autres joueurs avant lui. Il y a donc le score suivi du nom de celui qui l'a effectué. Malheureusement pour l'instant il n'y a pas la possibilité d'entrer un nom donc il n'y en aura qu'un seul par défaut, à savoir Jhon\_Doe.
+Le joueur peut alors observer les meilleurs scores atteints par les autres
+joueurs avant lui. Il y a donc le score suivi du nom de celui qui l'a effectué.
+Malheureusement pour l'instant il n'y a pas la possibilité d'entrer un nom donc
+il n'y en aura qu'un seul par défaut, à savoir Jhon\_Doe.
 
-Les scores et noms présents dans ce classement se trouvent dans un fichier à part, story\_score.txt. Quand l'utilisateur tire sur le Hi-Score, la fonction load\_score présente dans le module misc.py va être utilisé pour charger les données du fichiers à partir de la classe Score présente dans le même fichier. 
+Les scores et noms présents dans ce classement se trouvent dans un fichier à
+part, story\_score.txt. Quand l'utilisateur tire sur le Hi-Score, la fonction
+load\_score présente dans le module misc.py va être utilisé pour charger les
+données du fichiers à partir de la classe Score présente dans le même fichier.
 
-Quand le joueur finira le mode histoire, son score sera gardé en mémoire et donc enregistré dans le fichier de score. Le score le plus bas sera détruit car nous ne conservons que 10 scores en mémoire maximum.
+Quand le joueur finira le mode histoire, son score sera gardé en mémoire et donc
+enregistré dans le fichier de score. Le score le plus bas sera détruit car nous
+ne conservons que 10 scores en mémoire maximum.
 
 \subsection{Exit}
 
-Comme son nom l'indique, quand le joueur tire dessus, le jeu s'arrête et l'utilisateur quitte donc l'application.
+Comme son nom l'indique, quand le joueur tire dessus, le jeu s'arrête et
+l'utilisateur quitte donc l'application.
 
 \section{Deuxième partie}
 
@@ -188,9 +210,12 @@ Comme son nom l'indique, quand le joueur tire dessus, le jeu s'arrête et l'util
 
 \subsection{Environnement}
 
-Notre jeu est codé sous Python 3 et nous utilisons pysdl2 qui est une librairie de Python pour gérer tout ce qui concerne le multimédia pour notre jeu, à savoir l'ambiance sonore et les graphismes.
+Notre jeu est codé sous Python 3 et nous utilisons pysdl2 qui est une librairie
+de Python pour gérer tout ce qui concerne le multimédia pour notre jeu, à savoir
+l'ambiance sonore et les graphismes.
 
-Nous avons également des fichiers à part, sous l'extension .dcbbf qui sont les fichiers de blocks du jeu. 
+Nous avons également des fichiers à part, sous l'extension .dcbbf qui sont les
+fichiers de blocks du jeu.
 
 \section{Conclusion}
 
