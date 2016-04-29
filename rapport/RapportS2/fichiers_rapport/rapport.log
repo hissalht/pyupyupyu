@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.1)  28 APR 2016 20:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.1)  29 APR 2016 21:14
 entering extended mode
 **rapport.tex
 (rapport.tex
@@ -367,26 +367,42 @@ File: fichiers_rapport/images/touhou_project.jpg Graphic file (type jpg)
 Package pdftex.def Info: fichiers_rapport/images/touhou_project.jpg used on inp
 ut line 26.
 (pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
- [2 <./fichiers_rapport/images/touhou_project.jpg>] [3] (rapport.aux) ) 
+ [2 <./fichiers_rapport/images/touhou_project.jpg>]
+<fichiers_rapport/images/explaindcbbf.jpg, id=14, 244.66406pt x 449.42906pt>
+File: fichiers_rapport/images/explaindcbbf.jpg Graphic file (type jpg)
+
+<use fichiers_rapport/images/explaindcbbf.jpg>
+Package pdftex.def Info: fichiers_rapport/images/explaindcbbf.jpg used on input
+ line 60.
+(pdftex.def)             Requested size: 183.49759pt x 337.07095pt.
+ [3] [4 <./fichiers_rapport/images/explaindcbbf.jpg>]
+<fichiers_rapport/images/explaindcbbf2.jpg, id=22, 451.6875pt x 451.6875pt>
+File: fichiers_rapport/images/explaindcbbf2.jpg Graphic file (type jpg)
+
+<use fichiers_rapport/images/explaindcbbf2.jpg>
+Package pdftex.def Info: fichiers_rapport/images/explaindcbbf2.jpg used on inpu
+t line 74.
+(pdftex.def)             Requested size: 338.76479pt x 338.76479pt.
+ [5 <./fichiers_rapport/images/explaindcbbf2.jpg>] [6] (rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 2626 strings out of 493673
- 33922 string characters out of 3141524
+ 2638 strings out of 493673
+ 34340 string characters out of 3141524
  94243 words of memory out of 3000000
- 5970 multiletter control sequences out of 15000+200000
+ 5980 multiletter control sequences out of 15000+200000
  11766 words of font info for 30 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 28i,6n,30p,452b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Use
-rs\Skulmad\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200
-.pk> <C:\Users\Skulmad\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
-600\ecrm1000.pk> <C:\Users\Skulmad\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkn
-appen\ec\dpi600\ecbx1000.pk> <C:\Users\Skulmad\AppData\Local\MiKTeX\2.9\fonts\p
-k\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Skulmad\AppData\Local\MiKTeX
-\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Skulmad\AppData\
-Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk>
-Output written on rapport.pdf (3 pages, 137413 bytes).
+ 28i,6n,30p,673b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\User
+s\Skulmad\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.
+pk> <C:\Users\Skulmad\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
+00\ecrm1000.pk> <C:\Users\Skulmad\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkna
+ppen\ec\dpi600\ecbx1000.pk> <C:\Users\Skulmad\AppData\Local\MiKTeX\2.9\fonts\pk
+\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Skulmad\AppData\Local\MiKTeX\
+2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Skulmad\AppData\L
+ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk>
+Output written on rapport.pdf (6 pages, 361019 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
+ 254 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
