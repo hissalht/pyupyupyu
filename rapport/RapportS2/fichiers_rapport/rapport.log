@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.1)  30 APR 2016 00:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.1)  30 APR 2016 01:33
 entering extended mode
 **rapport.tex
 (rapport.tex
@@ -360,14 +360,43 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 4.
 )
 \tf@toc=\write3
- [2] <images/touhou_project.jpg, id=13, 385.44pt x 289.08pt>
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
+
+ []
+
+<images/touhou_project.jpg, id=13, 385.44pt x 289.08pt>
 File: images/touhou_project.jpg Graphic file (type jpg)
 
 <use images/touhou_project.jpg>
 Package pdftex.def Info: images/touhou_project.jpg used on input line 28.
 (pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
- [3 <./images/touhou_project.jpg>]
-<images/menuprinc.jpg, id=17, 770.88pt x 576.65437pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
+
+ []
+
+[3 <./images/touhou_project.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+ []
+
+[4] <images/menuprinc.jpg, id=20, 770.88pt x 576.65437pt>
 File: images/menuprinc.jpg Graphic file (type jpg)
 
 <use images/menuprinc.jpg>
@@ -378,8 +407,7 @@ Overfull \hbox (40.43906pt too wide) in paragraph at lines 50--51
  [] 
  []
 
-[4 <./images/menuprinc.jpg>]
-<images/sousmenu.jpg, id=22, 768.62157pt x 576.65437pt>
+<images/sousmenu.jpg, id=21, 768.62157pt x 576.65437pt>
 File: images/sousmenu.jpg Graphic file (type jpg)
 
 <use images/sousmenu.jpg>
@@ -390,22 +418,60 @@ Overfull \hbox (39.30984pt too wide) in paragraph at lines 62--63
  [] 
  []
 
-[5 <./images/sousmenu.jpg>]
-<images/explaindcbbf.jpg, id=26, 244.66406pt x 449.42906pt>
+[5 <./images/menuprinc.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+[6 <./images/sousmenu.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
+<images/explaindcbbf.jpg, id=29, 244.66406pt x 449.42906pt>
 File: images/explaindcbbf.jpg Graphic file (type jpg)
 
 <use images/explaindcbbf.jpg>
 Package pdftex.def Info: images/explaindcbbf.jpg used on input line 90.
 (pdftex.def)             Requested size: 183.49759pt x 337.07095pt.
- [6] [7 <./images/explaindcbbf.jpg>]
-<images/explaindcbbf2.jpg, id=34, 451.6875pt x 451.6875pt>
+ [7]
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+
+ []
+
+[8 <./images/explaindcbbf.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+<images/explaindcbbf2.jpg, id=37, 451.6875pt x 451.6875pt>
 File: images/explaindcbbf2.jpg Graphic file (type jpg)
 
 <use images/explaindcbbf2.jpg>
 Package pdftex.def Info: images/explaindcbbf2.jpg used on input line 104.
 (pdftex.def)             Requested size: 338.76479pt x 338.76479pt.
- [8 <./images/explaindcbbf2.jpg>]
-<images/hiscore.jpg, id=38, 770.12718pt x 577.40718pt>
+ [9 <./images/explaindcbbf2.jpg>]
+<images/hiscore.jpg, id=41, 770.12718pt x 577.40718pt>
 File: images/hiscore.jpg Graphic file (type jpg)
 
 <use images/hiscore.jpg>
@@ -416,26 +482,99 @@ Overfull \hbox (40.06264pt too wide) in paragraph at lines 114--115
  [] 
  []
 
-[9 <./images/hiscore.jpg>] [10] (rapport.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+[10 <./images/hiscore.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 131--134
+
+ []
+
+<images/collision-boites.png, id=45, 250.9375pt x 228.855pt>
+File: images/collision-boites.png Graphic file (type png)
+
+<use images/collision-boites.png>
+Package pdftex.def Info: images/collision-boites.png used on input line 142.
+(pdftex.def)             Requested size: 200.75026pt x 183.08423pt.
+
+<images/carrierhit.png, id=46, 924.45375pt x 563.10374pt>
+File: images/carrierhit.png Graphic file (type png)
+
+<use images/carrierhit.png>
+Package pdftex.def Info: images/carrierhit.png used on input line 148.
+(pdftex.def)             Requested size: 369.77495pt x 225.2375pt.
+
+Overfull \hbox (24.77495pt too wide) in paragraph at lines 148--149
+ [] 
+ []
+
+[11 <./images/collision-boites.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+ []
+
+[12 <./images/carrierhit.png>] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+[14] [15] [16] (rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 2653 strings out of 493673
- 34440 string characters out of 3141524
+ 2664 strings out of 493673
+ 34708 string characters out of 3141524
  94243 words of memory out of 3000000
- 5992 multiletter control sequences out of 15000+200000
+ 6000 multiletter control sequences out of 15000+200000
  11766 words of font info for 30 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 28i,6n,30p,673b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Skulmad\AppData\Local
-\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Skulmad\A
-ppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Use
-rs\Skulmad\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440
-.pk> <C:\Users\Skulmad\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
-600\ecrm1000.pk> <C:\Users\Skulmad\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkn
-appen\ec\dpi600\ecrm1200.pk> <C:\Users\Skulmad\AppData\Local\MiKTeX\2.9\fonts\p
-k\ljfour\jknappen\ec\dpi600\ecrm1728.pk>
-Output written on rapport.pdf (10 pages, 557519 bytes).
+ 28i,6n,30p,682b,439s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Skulmad\AppData\Local\MiKTeX\2.9\fonts
+\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Skulmad\AppData\Local\MiKT
+eX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\Skulmad\AppDat
+a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Sk
+ulmad\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> 
+<C:\Users\Skulmad\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
+crm1200.pk> <C:\Users\Skulmad\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
+\ec\dpi600\ecrm1728.pk>
+Output written on rapport.pdf (16 pages, 626518 bytes).
 PDF statistics:
- 286 PDF objects out of 1000 (max. 8388607)
+ 324 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
