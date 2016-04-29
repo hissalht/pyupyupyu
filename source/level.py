@@ -7,26 +7,27 @@ from math import *
 
 from boss3 import *
 
+
 class Level(object):
     """
     This class is used to build the level for the game
     """
 
     def __init__(self, difficulty, world, org):
-        #dictionnary used to match the string and the class
-        self.dico = {'StandingEnnemies':StandingEnnemies,
-        'BasicShit':BasicShit,
-        'AngryBird':AngryBird,
-        'Carrier':Carrier,
-        'SmallWall':SmallWall,
-        'Boss3':Boss3}
-        #this list will contain ennemies of the random level
+        # dictionnary used to match the string and the class
+        self.dico = {'StandingEnnemies': StandingEnnemies,
+                     'BasicShit': BasicShit,
+                     'AngryBird': AngryBird,
+                     'Carrier': Carrier,
+                     'SmallWall': SmallWall,
+                     'Boss3': Boss3}
+        # this list will contain ennemies of the random level
         self.level = []
-        #initialize by loading informations of dcbbf files
+        # initialize by loading informations of dcbbf files
         self.loadedblocks = load_blocks()
-        #blocks extracted in the dcbbf files
+        # blocks extracted in the dcbbf files
         self.levelblocks = []
-        #difficulty of the level
+        # difficulty of the level
         self.difficulty = difficulty
         self.world = world
         self.org = org
@@ -56,10 +57,12 @@ class Level(object):
         self.joinblocks(lg)
         for blk in self.levelblocks:
             for enn in blk.enns:
-                en = self.dico[enn[0]](self.world, Rectangle(int(enn[1]), int(enn[2]) - n*1000 + self.org, self.dico[enn[0]].wh[0],self.dico[enn[0]].wh[1]))
+                en = self.dico[enn[0]](self.world, Rectangle(int(enn[1]), int(
+                    enn[2]) - n * 1000 + self.org, self.dico[enn[0]].wh[0], self.dico[enn[0]].wh[1]))
                 self.level += [en]
-            n+=1
+            n += 1
         self.level = sorted(self.level, key=lambda en: en.hitbox.y, reverse=True)
+
 
 class Blocks(object):
     """
@@ -76,6 +79,7 @@ class Blocks(object):
             self.rarity = int(rarity[abs(int(difficulty)) - 1])
             self.enns = enns
 
+
 def cumsum(l):
     """
     This function used to make the cumulative sum of a list of numbers
@@ -88,6 +92,7 @@ def cumsum(l):
         sums.append(tot)
     return sums
 
+
 def load_blocks():
     """
     This functions used to load of the blocks contained in the
@@ -98,7 +103,7 @@ def load_blocks():
     for element in os.listdir('ressources/blocks'):
         if re.search(r'\.dcbbf', element) != None:
             block = open('ressources/blocks/' + element)
-            #insérer un try pour contrôler les exceptions avec des fichiers de mauvais formats
+            # insérer un try pour contrôler les exceptions avec des fichiers de mauvais formats
             diff = (block.readline().split())[0]
             rarity = (block.readline().split())
             line = block.readline().split()
@@ -108,6 +113,7 @@ def load_blocks():
                 line = block.readline().split()
                 lblocks += [Blocks(diff, rarity, enns)]
     return lblocks
+
 
 def getfdict(blocks, difficulty):
     """
@@ -123,8 +129,9 @@ def getfdict(blocks, difficulty):
             gr += blk.rarity
             d[blk] = blk.rarity
     for it in d:
-        d[it] = d[it]/gr
+        d[it] = d[it] / gr
     return d
+
 
 def getfdictBoss(blocks):
     """
@@ -140,8 +147,9 @@ def getfdictBoss(blocks):
             grb += blk.rarity
             dBoss[blk] = blk.rarity
     for it in dBoss:
-        dBoss[it] = dBoss[it]/grb
+        dBoss[it] = dBoss[it] / grb
     return dBoss
+
 
 def getrandomblock(d):
     """
@@ -151,10 +159,13 @@ def getrandomblock(d):
 
     cles, vals = zip(*d.items())
     cdist = cumsum(vals)
+
     def fun():
-        r = random(); k = 0
-        while r > cdist[k]: k += 1
+        r = random()
+        k = 0
+        while r > cdist[k]:
+            k += 1
         return cles[k]
     return fun()
 
-#TODO real level, random level done
+# TODO real level, random level done

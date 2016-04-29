@@ -39,6 +39,8 @@ class FontManager(object):
         dst_rect = SDL_Rect(round(x), round(y), w, h)
         texture = SDL_CreateTextureFromSurface(graphics.renderer, surface)
         graphics.blit_surface(texture, src_rect, dst_rect)
+        SDL_DestroyTexture(texture)
+        SDL_FreeSurface(surface)
 
     @staticmethod
     def draw_text_centered(graphics, fontname, size, color, text, x, y):
@@ -53,7 +55,8 @@ class FontManager(object):
         dst_rect = SDL_Rect(round(x - w / 2), round(y - h / 2), w, h)
         texture = SDL_CreateTextureFromSurface(graphics.renderer, surface)
         graphics.blit_surface(texture, src_rect, dst_rect)
-        pass
+        SDL_DestroyTexture(texture)
+        SDL_FreeSurface(surface)
 
     @staticmethod
     def load_font(path, name, size):
