@@ -12,6 +12,8 @@
 %\date\today
 \maketitle
 
+\newpage
+
 \tableofcontents
 
 \newpage
@@ -23,7 +25,7 @@ Le Manic Shooter est un sous genre de Shoot-em-up, une sorte de jeu de tir dynam
 Celui-ci se différencie des Shoot-em up classiques par certaines caractéristiques. Tout d'abord, la taille du "vaisseau" du joueur se limite dans la plupart des Manic Shooter à un pixel, pourquoi ? Tout simplement pour pouvoir faire face à la deuxième caractèristique phare du Manic Shooter, la multitude de projectiles qui apparaissent à l'écran comme vous pouvez le voir sur cette image tirée de Touhou Project
 
 \begin{center}
-\includegraphics[scale=0.75]{fichiers_rapport/images/touhou_project.jpg}
+\includegraphics[scale=0.75]{images/touhou_project.jpg}
 \end{center}
 
 L'objectif de notre projet est donc le suivant, créer un Manic Shooter. Il faut donc qu'il est les mêmes atouts et défauts que ce dernier. De ce fait, nous avons mis en place un place un moteur de jeu capable de gérer ce nombre immense de projectiles mais aussi d'ennemis.
@@ -38,9 +40,37 @@ La deuxième moitié du deuxième semestre a été mise à profit pour équilibr
 
 Nous allons désormais aborder le fonctionnement du jeu et ses mécaniques.
 
-\section{Moteur du jeu}
+\section{Fonctionnement}
 
-\subsection{Le générateur de niveaux}
+\subsection{Les menu}
+
+Ce que nous voyons en premier en jouant, ce sont les menus. En effet, dès que le jeu se lance, voici ce à quoi le joueur est confronté:
+
+\begin{center}
+\includegraphics[scale=0.5]{images/menuprinc.jpg}
+\end{center}
+
+C'est là que le joueur commence à avoir la main. Il peut bouger le vaisseau via les flèches directionnelles pour se déplacer et tirer sur les astéroïdes afin de choisir ce qu'il veut faire. Chaque astéroïde est en fait un ennemi invincible qui, lorsqu'il se fait toucher, renvoie à une action bien spécifique.
+
+Nous allons maintenant voir ce que fait chacun de ces gros rochers. 
+
+\subsection{Play}
+
+Lorsque le joueur tire sur cette option, un autre menu s'offre à lui avec la possibilité de choisir entre les trois options que vous pouvez voir ici:
+
+\begin{center}
+\includegraphics[scale=0.5]{images/sousmenu.jpg}
+\end{center}
+
+Les deux premiers sont des modes de jeu et le dernier permet au joueur de revenir au menu principal. Maintenant, voyons ce que propose chaque mode de jeu.
+
+\subsubsection{Mode histoire}
+
+Le mode histoire est un mode très simple qui va simplement amener le joueur à traverser trois niveaux différents avec un boss à la fin de chaque niveau. Les stages ont été conçus à l'avance et permet de découvrir tous les types d'ennemis implémentés dans le jeu.
+
+Les stages se décomposent en blocks qui sont mis bout à bout de manière logique et réfléchi dans ce mode, ce qui n'est pas le cas pour le mode infini, que nous vous allons vous expliquer plus en détail tout comme ces fameux blocks. 
+
+\subsubsection{Le mode infini et le générateur de niveaux}
 
 Pour le mode infini de notre jeu, nous avons crée un générateur de niveaux. Ce générateur de niveau se trouve dans le module level.py de notre dépôt et est constitué de plusieurs classes et fonctions. Ce que ce module fait, c'est prendre le contenu des fichiers exemple.dcbbf qui contiennent donc des blocks d'ennemis et va transformer ces blocks en liste d'ennemis qu'il va ensuite mettre bout à bout de manière aléatoire en fonction d'une difficulté (on choisira seulement les blocks dont la difficulté est inférieure ou égale à la difficulté du niveau généré).
 
@@ -57,7 +87,7 @@ Un fichier .dcbbf est un fichier qui contient plusieurs informations selon un fo
 Comme vous pouvez le voir ci-dessous sur la capture d'écran d'un fichier block:
 
 \begin{center}
-\includegraphics[scale=0.75]{fichiers_rapport/images/explaindcbbf.jpg}
+\includegraphics[scale=0.75]{images/explaindcbbf.jpg}
 \end{center}
 
 Pour les ennemis normaux, la difficulté va de 0 à 5 et pour les boss de -1 à -5. La difficulté du niveau est aussi l'index qui permettra de définir la rareté du block. En effet, reprenons l'exemple ci-dessus. Si la difficulté choisie pour la création du niveau est de 1, ce block bien précis sera sélectionné car sa difficulté est inférieure à 1. De plus, sa rareté sera fixé à 8 car le générateur va créer une liste de rareté [10, 8, 6, 4, 2] et que l'élément d'indice 1 est 8. Le (3) sera tout simplement la liste des ennemis avec dans l'ordre, le type d'ennemi, la position de sa hitbox en x et la position de sa hitbox en y.
@@ -71,10 +101,28 @@ Pour finir, nous parlerons de la gestion des positions des ennemis dans les bloc
 Le schéma ci-dessous résume le processus:
 
 \begin{center}
-\includegraphics[scale=0.75]{fichiers_rapport/images/explaindcbbf2.jpg}
+\includegraphics[scale=0.75]{images/explaindcbbf2.jpg}
 \end{center}
 
 Comme le générateur fonctionne actuellement, le mode Infini de notre jeu fonctionne par vague de 20 blocks avec un boss à la fin de chaque vague. La difficulté commence à 0 et augmente d'un cran tous les 20 blocks jusqu'à un maximum de 4.
+
+\subsection{Hi-Score}
+
+La partie consacré à Play étant terminé, à quoi sert l'astéroïde suivant. Lorsque le joueur tire dessus, celui-ci accède à un écran des scores semblable à celui-ci:
+
+\begin{center}
+\includegraphics[scale=0.5]{images/hiscore.jpg}
+\end{center}
+
+Le joueur peut alors observer les meilleurs scores atteints par les autres joueurs avant lui. Il y a donc le score suivi du nom de celui qui l'a effectué. Malheureusement pour l'instant il n'y a pas la possibilité d'entrer un nom donc il n'y en aura qu'un seul par défaut, à savoir Jhon\_Doe.
+
+Les scores et noms présents dans ce classement se trouvent dans un fichier à part, story\_score.txt. Quand l'utilisateur tire sur le Hi-Score, la fonction load\_score présente dans le module misc.py va être utilisé pour charger les données du fichiers à partir de la classe Score présente dans le même fichier. 
+
+Quand le joueur finira le mode histoire, son score sera gardé en mémoire et donc enregistré dans le fichier de score. Le score le plus bas sera détruit car nous ne conservons que 10 scores en mémoire maximum.
+
+\subsection{Exit}
+
+Comme son nom l'indique, quand le joueur tire dessus, le jeu s'arrête et l'utilisateur quitte donc l'application.
 
 \section{Deuxième partie}
 
@@ -84,7 +132,9 @@ Comme le générateur fonctionne actuellement, le mode Infini de notre jeu fonct
 
 \subsection{Environnement}
 
-Notre jeu est codé sous Python 3
+Notre jeu est codé sous Python 3 et nous utilisons pysdl2 qui est une librairie de Python pour gérer tout ce qui concerne le multimédia pour notre jeu, à savoir l'ambiance sonore et les graphismes.
+
+Nous avons également des fichiers à part, sous l'extension .dcbbf qui sont les fichiers de blocks du jeu. 
 
 \section{Conclusion}
 
