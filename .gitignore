@@ -2,3 +2,4 @@
 *.odp#
 *.dia~
 *.autosave
+*.pyc
