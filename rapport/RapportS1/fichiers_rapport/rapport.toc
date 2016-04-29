@@ -1,0 +1,19 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {I}Introduction}{2}
+\contentsline {section}{\numberline {I}Contexte}{2}
+\contentsline {section}{\numberline {II}Objectifs du projet}{3}
+\contentsline {chapter}{\numberline {II}Cahier des charges}{4}
+\contentsline {section}{\numberline {I}Fonctionnalit\IeC {\'e}s \IeC {\`a} r\IeC {\'e}aliser}{4}
+\contentsline {chapter}{\numberline {III}Fonctionnement}{5}
+\contentsline {section}{\numberline {I}Interfaces}{5}
+\contentsline {section}{\numberline {II}Vaisseaux}{7}
+\contentsline {section}{\numberline {III}Collisions}{7}
+\contentsline {section}{\numberline {IV}G\IeC {\'e}n\IeC {\'e}ration des vagues}{9}
+\contentsline {subsection}{\numberline {IV.1}standby\_ennemies}{9}
+\contentsline {subsection}{\numberline {IV.2}active\_ennemies}{10}
+\contentsline {chapter}{\numberline {IV}R\IeC {\'e}alisation}{11}
+\contentsline {section}{\numberline {I}R\IeC {\'e}partition des t\IeC {\^a}ches}{11}
+\contentsline {chapter}{\numberline {V}Retours sur l'application et apports possibles}{12}
+\contentsline {chapter}{\numberline {VI}Suppl\IeC {\'e}ments}{13}
+\contentsline {section}{\numberline {I}Sources}{13}
+\contentsline {section}{\numberline {II}Documentation}{13}
