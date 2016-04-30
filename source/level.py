@@ -7,13 +7,36 @@ from math import *
 
 from boss3 import *
 
+class StoryLevel(object):
+
+    def __init__(self, level, world):
+        # dictionnary used to match the string and the class
+        self.dico = {'StandingEnnemies': StandingEnnemies,
+                     'BasicShit': BasicShit,
+                     'AngryBird': AngryBird,
+                     'Carrier': Carrier,
+                     'SmallWall': SmallWall,
+                     'Boss3': Boss3}
+        self.level = []
+        self.loadedblocks = load_blocks('ressources/level' + str(level))
+        self.world = world
+
+    def makelevel(self):
+        n = 1
+        for blk in self.loadedblocks:
+            for enn in blk.enns:
+                en = self.dico[enn[0]](self.world, Rectangle(int(enn[1]), int(
+                    enn[2]) - n * 1000, self.dico[enn[0]].wh[0], self.dico[enn[0]].wh[1]))
+                self.level += [en]
+            n += 1
+        self.level = sorted(self.level, key=lambda en: en.hitbox.y, reverse=True)
 
 class Level(object):
     """
     This class is used to build the level for the game
     """
 
-    def __init__(self, difficulty, world, org):
+    def __init__(self, difficulty, world, org, lg):
         # dictionnary used to match the string and the class
         self.dico = {'StandingEnnemies': StandingEnnemies,
                      'BasicShit': BasicShit,
@@ -24,7 +47,9 @@ class Level(object):
         # this list will contain ennemies of the random level
         self.level = []
         # initialize by loading informations of dcbbf files
-        self.loadedblocks = load_blocks()
+        self.loadedblocks = load_blocks('ressources/blocks')
+        # chosenblocks
+        self.chosenblocks = joinblocks(lg)
         # blocks extracted in the dcbbf files
         self.levelblocks = []
         # difficulty of the level
@@ -45,7 +70,7 @@ class Level(object):
             self.levelblocks += [getrandomblock(d)]
         self.levelblocks += [getrandomblock(dBoss)]
 
-    def makelevel(self, lg=6):
+    def makelevel(self):
         """
         Function used to make the level by using informations in the self.levelblocks
         list to create of the ennemies within the selected blocks. The default number
@@ -54,7 +79,6 @@ class Level(object):
         """
 
         n = 1
-        self.joinblocks(lg)
         for blk in self.levelblocks:
             for enn in blk.enns:
                 en = self.dico[enn[0]](self.world, Rectangle(int(enn[1]), int(
@@ -93,16 +117,16 @@ def cumsum(l):
     return sums
 
 
-def load_blocks():
+def load_blocks(chemin):
     """
     This functions used to load of the blocks contained in the
     dcbbf files
     """
 
     lblocks = []
-    for element in os.listdir('ressources/blocks'):
+    for element in os.listdir(chemin):
         if re.search(r'\.dcbbf', element) != None:
-            block = open('ressources/blocks/' + element)
+            block = open(chemin + element)
             # insérer un try pour contrôler les exceptions avec des fichiers de mauvais formats
             diff = (block.readline().split())[0]
             rarity = (block.readline().split())

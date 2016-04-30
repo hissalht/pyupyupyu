@@ -83,10 +83,9 @@ class InfiniteGame(State):
         self.shooting = False
         # Level generation
         self.currentlevel = 0
-        level = Level(self.currentlevel, self.world, 0)
-        level.makelevel(20)
-        self.world.standby_ennemies = generate_level3(self.world, graphics)
-        #self.world.standby_ennemies = level.level
+        level = Level(self.currentlevel, self.world, 0, 20)
+        #self.world.standby_ennemies = generate_level3(self.world, graphics)
+        self.world.standby_ennemies = level.level
         # theme play
         # AudioManager.play_music("theme")
         # debug display
