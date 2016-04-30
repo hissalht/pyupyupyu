@@ -44,18 +44,19 @@ class Level(object):
                      'Carrier': Carrier,
                      'SmallWall': SmallWall,
                      'Boss3': Boss3}
-        # this list will contain ennemies of the random level
-        self.level = []
-        # initialize by loading informations of dcbbf files
-        self.loadedblocks = load_blocks('ressources/blocks')
-        # chosenblocks
-        self.chosenblocks = joinblocks(lg)
-        # blocks extracted in the dcbbf files
-        self.levelblocks = []
         # difficulty of the level
         self.difficulty = difficulty
         self.world = world
         self.org = org
+        # this list will contain ennemies of the random level
+        self.level = []
+        # blocks extracted in the dcbbf files
+        self.levelblocks = []
+        # initialize by loading informations of dcbbf files
+        self.loadedblocks = load_blocks('ressources/blocks/')
+        # chosenblocks
+        self.chosenblocks = self.joinblocks(lg)
+        self.makelevel()
 
     def joinblocks(self, lg):
         """

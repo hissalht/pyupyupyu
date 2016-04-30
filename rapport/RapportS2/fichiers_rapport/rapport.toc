@@ -9,13 +9,13 @@
 \contentsline {subsection}{\numberline {2.4}Exit}{11}
 \contentsline {subsection}{\numberline {2.5}Le jeu}{11}
 \contentsline {subsubsection}{\numberline {2.5.1}Les collisions}{11}
-\contentsline {subsubsection}{\numberline {2.5.2}Les powers-up}{12}
-\contentsline {subsubsection}{\numberline {2.5.3}Recovery-time}{12}
-\contentsline {section}{\numberline {3}Organisation }{13}
-\contentsline {section}{\numberline {4}R\IeC {\'e}alisation}{14}
-\contentsline {subsection}{\numberline {4.1}Environnement}{14}
-\contentsline {subsection}{\numberline {4.2}R\IeC {\'e}partition du travail}{14}
-\contentsline {section}{\numberline {5}Conclusion: apports et critiques}{15}
-\contentsline {section}{\numberline {6}Suppl\IeC {\'e}ments}{16}
-\contentsline {subsection}{\numberline {6.1}Sources}{16}
-\contentsline {subsection}{\numberline {6.2}Documentation}{16}
+\contentsline {subsubsection}{\numberline {2.5.2}Les powers-up}{11}
+\contentsline {subsubsection}{\numberline {2.5.3}Recovery-time}{13}
+\contentsline {section}{\numberline {3}H\IeC {\'e}ritage et d\IeC {\'e}pendance}{14}
+\contentsline {section}{\numberline {4}R\IeC {\'e}alisation}{15}
+\contentsline {subsection}{\numberline {4.1}Environnement}{15}
+\contentsline {subsection}{\numberline {4.2}R\IeC {\'e}partition du travail}{15}
+\contentsline {section}{\numberline {5}Conclusion: apports et critiques}{16}
+\contentsline {section}{\numberline {6}Suppl\IeC {\'e}ments}{17}
+\contentsline {subsection}{\numberline {6.1}Sources}{17}
+\contentsline {subsection}{\numberline {6.2}Documentation}{17}

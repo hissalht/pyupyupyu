@@ -123,12 +123,10 @@ class InfiniteGame(State):
         # new ennemies
         if self.world.active_ennemies == [] and self.world.standby_ennemies == [] and self.currentlevel < 4:
             self.currentlevel += 1
-            level = Level(self.currentlevel, self.world, self.world.camera.y)
-            level.makelevel(20)
+            level = Level(self.currentlevel, self.world, self.world.camera.y, 20)
             self.world.standby_ennemies = level.level
         elif self.world.active_ennemies == [] and self.world.standby_ennemies == [] and self.currentlevel == 4:
-            level = Level(self.currentlevel, self.world, self.world.camera.y)
-            level.makelevel(20)
+            level = Level(self.currentlevel, self.world, self.world.camera.y, 20)
             self.world.standby_ennemies = level.level
 
     def handle_event(self, event):
