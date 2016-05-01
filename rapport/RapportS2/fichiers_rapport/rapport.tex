@@ -28,7 +28,7 @@ type de jeu. \newline
 
 Celui-ci se différencie des Shoot-em up classiques par certaines
 caractéristiques. Tout d'abord, la taille du "vaisseau" du joueur se limite dans
-la plupart des Manic Shooter à un pixel, pourquoi ? Tout simplement pour pouvoir
+la plupart des Manic Shooter à un pixel, pourquoi? Tout simplement pour pouvoir
 faire face à la deuxième caractèristique phare du Manic Shooter, la multitude de
 projectiles qui apparaissent à l'écran comme vous pouvez le voir sur cette image
 tirée de Touhou Project
@@ -237,17 +237,37 @@ tout la même que le sprite du vaisseau (la hitbox est rayée en rouge):
 \subsubsection{Les powers-up}
 
 Les \emph{power-ups} sont des options modifiant les conditions de jeu en bien ou
-en mal. Dans ce jeu, il s'agit
+en mal. Dans ce jeu, il s'agit de bonus parfois laissés par des ennemis abattus.
+Ci-dessous, des exemples de powerups.
 
 \begin{center}
-\includegraphics[scale= 0.8]{images/exemple_powerup.png}
-\end{center}
-
-\begin{center}
-\includegraphics[scale= 0.8]{images/dia_powerup.png}
+\includegraphics[scale=0.8]{images/exemple_powerup.png}
 \end{center}
 
 
+On peut séparer les powerups en deux entités : leur représentation dans le monde
+et leur effet. La première correspond à la classe \emph{WorldPowerUp} et la
+seconde aux sous-classes de \emph{PowerUpEffect}
+
+\begin{center}
+\includegraphics[scale=0.5]{images/dia_powerup.png}
+\end{center}
+
+\emph{WorldPowerUp} unit ensemble une hitbox et un effet de powerup. Cette
+classe gère aussi l'affichage et la mise à jour de la position du powerup dans
+le monde.
+
+\emph{PowerUpEffect} est une classe abstraite représentant un effet de powerup.
+Elle dipose de deux méthodes : \emph{apply} et \emph{remove}. La première a pour
+rôle d'appliquer l'effet du powerup, tandis que la seconde ``annule'' l'effet
+quand cela est nescessaire.
+
+Lorsque la hitbox d'un powerup entre en collision avec celle du joueur, celui-ci
+est appliqué grâce à la méthode \emph{apply}. Dans le cas où le joueur était
+déjà sous l'effet d'un bonus du même type, ce dernier est supprimé par
+\emph{remove} avant d'être remplacé. Ainsi, on peut éviter que les effets ne
+s'empilent à l'infini (par ex : 4 bonus multipliant la vitesse de tir par 2 =
+vitesse de tir multiplié par 16).
 
 
 \subsubsection{Recovery-time}
@@ -265,8 +285,67 @@ donc se repositionner sans craindre de mourir instantanément. \newline
 Ce temps de recouvrement se traduit à l'écran par le clignotement du vaisseau
 joueur. \newpage
 
-\section{Héritage et dépendance}
 
+\subsection{Les boucles principales et la classe State}
+
+La boucle principale d'un programme est la boucle dans laquelle différentes
+actions sont réalisées en continu en fonction d'evenement particuliers (entrée
+utilisateur, conditions particulières, etc).
+
+Ici, chaque tour de la \emph{boucle principale} réalise les actions suivantes:
+\begin{itemize}
+    \item Mettre à jour les différentes variables du programme.
+    \item Gèrer les evenements (appuis sur des touches, mouvement de souris,
+        etc).
+    \item Dessiner le jeu à l'écran.
+\end{itemize}
+
+\begin{center}
+\includegraphics[scale=0.5]{images/dia_state.png}
+\end{center}
+
+La classe abstraite \emph{State} représente une boucle principale. Pour chaque
+``état'' du programme (menu principal, en jeu, menu pause, etc), on crée une
+classe héritant de \emph{State} et on surcharge différentes méthodes afin
+d'obtenir le comportement souhaité.
+
+A chaque tour de boucle, l'image à l'écran est rafraichie. Si l'on veut que
+notre jeu ``tourne'' à 60 images par secondes, il faudra faire 60 tours de boucle
+par seconde. C'est la méthode \emph{run} qui contient la boucle principale de
+chaque ``state''. A chaque tour de boucle, celle-ci appelle tour à tour les
+méthodes \emph{update}, \emph{draw} et \emph{handle\_event}.
+
+Dans le cas des classe \emph{StoryGame}, \emph{InfiniteGame} et
+\emph{MenuState}, un objet de type \emph{World} est utilisé pour représenter le
+monde dans lequel le joueur évolue. Il contient la liste de tout les ennemis
+présents à l'écran où non, et est doté de méthodes permettant de mettre à jours
+et de dessiner ces données.
+
+Ainsi, les méthodes \emph{update} et \emph{draw} des sous-classes de State
+appellent les méthodes \emph{update} et \emph{draw} de l'objet World, qui à leur tour,
+appellent les méthode \emph{update} et \emph{draw} des objets composant le monde.
+
+
+\subsection{Les vaisseaux}
+
+Tout les vaisseaux, qu'ils soient ennemis ou non, héritent de la classe
+abstraite \emph{Ship}. Celle-ci contient les méthode update et draw dont nous
+avons déjà parlé.
+
+La classe \emph{PlayerShip} représente le joueur. Elle se voit ainsi doté
+d'attributs et de méthodes supplémentaires, notament des emplacement de
+powerups, une liste des projectiles tirés, un méthode \emph{shoot}, etc.
+
+Tout les vaisseaux ennemis héritent de la classe \emph{EnnemyShip}, celle-ci
+contient elle aussi des attributs et des méthodes supplémentaires. La
+différence de comportement entre les types d'énnemis se fait au travers de leur
+méthode \emph{update} qui est surchargé afin d'obtenir de la diversité dans les
+patterns.
+
+
+\begin{center}
+\includegraphics[scale=0.4]{images/dia_ship.png}
+\end{center}
 
 \newpage
 
